@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="js/lib/jquery.mCustomScrollbar.min.css"/>
+		<link rel="stylesheet" type="text/css" href="js/lib/jquery.emoji.css"/>
+	</head>
+	<body>
+		<div class="login_box" style="display: block;">
+			<h3>用户登录</h3>
+			<p>用户名</p>
+			<input type="text" id="username" placeholder="请输入用户名" />
+			<p>请选择头像</p>
+			<ul id="login_avatar">
+				<li class="current"><img src="images/1_1.jpg" ></li>
+				<li><img src="images/1_2.jpg" ></li>
+				<li><img src="images/1_3.jpg" ></li>
+				<li><img src="images/1_4.jpg" ></li>
+				<li><img src="images/1_5.jpg" ></li>
+				<li><img src="images/1_6.jpg" ></li>
+				<li><img src="images/1_7.jpg" ></li>
+				<li><img src="images/1_8.jpg" ></li>
+				<li><img src="images/1_9.jpg" ></li>
+				<li><img src="images/1_10.jpg" ></li>
+			</ul>
+			<button type="button" id="loginBtn">登录</button>
+		</div>
+		<div class="container" style="display: none;">
+			<div class="user_list">
+				<div class="header">
+					<div class="avatar">
+						<img class="avatar_url" src="images/1_11.jpg" >
+					</div>
+					<div class="info">
+						<h3 class="username"></h3>
+					</div>
+				</div>
+				<div class="title">用户列表</div>
+				<div class="more_user">
+					<ul id="users">
+						
+					</ul>
+				</div>
+			</div>
+			<div class="chatroom">
+				<div class="chatroom_hd">
+					<h3>聊天室(<span id="user_count"></span>)</h3>
+				</div>
+				<div class="chatroom_bd">
+					<!-- <div class="system">
+						<p class="message_system">
+							<span class="content"></span>
+						</p>
+					</div> -->
+					
+					
+				</div>
+				<div class="chatroom_ft">
+					<div class="tool">
+						<a href="javascript:void(0);" class="face" title="表情"></a>
+						<a href="javascript:void(0);" class="screen_cut" title="截屏"></a>
+						<a href="javascript:void(0);" class="file" title="图片">
+							<label for="file"></label>
+							<input type="file" id="file" style="display: none;"/>
+						</a>
+					</div>
+					<div class="content">
+						<div id="content" class="text" contenteditable="true"></div>
+					</div>
+					<div class="action">
+						<span class="desc">点击ctrl+enter发送</span>
+						<a href="javascript:void(0);" id="sendBtn" class="sendBtn">发送</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/socket.io/socket.io.js" ></script>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lib/jquery.mCustomScrollbar.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lib/jquery.emoji.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

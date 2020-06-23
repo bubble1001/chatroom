@@ -1,0 +1,358 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 100%;
+	height: 100%;
+	background: url(../images/bg.jpg) no-repeat center center;
+	background-size: cover;
+}
+.avatar{
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+.avatar img{
+	width: 100%;
+	height: 100%;
+}
+.login_box{
+	width: 330px;
+	height: 360px;
+	margin: 40px auto;
+	background-color: #FFFFFF;
+	padding: 18px;
+}
+.login_box h3{
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.login_box p{
+	margin: 10px 0 10px;
+}
+.login_box input{
+	width: 100%;
+	height: 30px;
+}
+#login_avatar{
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	width: 100%;
+	padding-left: 10px;
+	padding-top: 4px;
+	overflow: hidden;
+}
+#login_avatar li{
+	display: inline-block;
+	width: 18%;
+	height: 56px;
+	list-style: none;
+	line-height: 0;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+#login_avatar li:hover{
+	border: 1px solid #fcfcfc;
+}
+#login_avatar li img{
+	width: 100%;
+	height: 100%;
+}
+#loginBtn{
+	margin: 10px auto;
+	width: 100%;
+	height: 40px;
+	background-color: cadetblue;
+	border-radius: 5px;
+	color: #FFFFFF;
+	font-size: 20px;
+	cursor: pointer;
+}
+.current{
+	border: 3px solid seagreen;
+}
+
+
+.container{
+	width: 1000px;
+	height: 526px;
+	margin: 30px auto;
+}
+.user_list{
+	width: 250px;
+	height: 100%;
+	float: left;
+	background-color: #2e3238;
+	color: #fff;
+	overflow: hidden;
+}
+.user_list .header{
+	height: 50px;
+	padding: 10px;
+	border-bottom: 1px solid #000000;
+	overflow: hidden;
+	font-size: 14px;
+	line-height: 44px;
+	font-weight: 100;
+	box-sizing: border-box;
+}
+
+.user_list .header .info{
+	float: left;
+	margin-left: 20px;
+	vertical-align: middle;
+}
+.user_list .title{
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	text-align: center;
+	border-bottom: 1px solid #000000;
+}
+.user_list .more_user{
+	width: 100%;
+	height: 420px;
+	overflow-y:scroll;
+	overflow-x: hidden;
+}
+.user_list .more_user::-webkit-scrollbar{
+	display: none;
+}
+.more_user .user{
+	padding: 10px;
+	border-bottom: 1px solid #000000;
+	overflow: hidden;
+	font-size: 14px;
+	line-height: 44px;
+	font-weight: 100;
+	vertical-align: middle;
+}
+.more_user .user .name{
+	float: left;
+}
+.more_user .user .username{
+	margin-left: 20px;
+}
+
+
+.chatroom{
+	height: 100%;
+	overflow: hidden;
+	background-color: #eee;
+	position: relative;
+}
+.chatroom_hd{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	line-height: 30px;
+	padding: 8px 0;
+}
+.chatroom_hd .h3{
+	font-size: 18px;
+	font-weight: 400;
+	padding: 10px 0;
+	margin: 0 20px;
+	border-bottom: 1px solid #ccc;
+	box-sizing: border-box;
+}
+.chatroom_bd{
+	position: absolute;
+	width: 100%;
+	top: 51px;
+	bottom: 180px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.system{
+	overflow: hidden;
+}
+.message_system{
+	text-align: center;
+	margin: 10px auto;
+	max-width: 50%;
+}
+.message_system .content{
+	display: inline-block;
+	font-size: 12px;
+	padding: 1px 18px;
+	color: #b2b2b2;
+}
+.message_box{
+	overflow: hidden;
+}
+
+
+
+.chatroom_ft{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 180px;
+	border-top: 1px solid #ccc;
+}
+.chatroom_ft .tool{
+	height: 30px;
+	padding: 5px 20px;
+}
+.chatroom_ft .tool .face{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../images/wechat-sprit.png) no-repeat -404px -398px;
+}
+.chatroom_ft .tool .screen_cut{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	vertical-align: middle;
+	background:url(../images/wechat-sprit.png) no-repeat -30px -432px;
+}
+.chatroom_ft .tool .file{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	vertical-align: middle;
+	background:url(../images/wechat-sprit.png) no-repeat -120px -432px;
+}
+.chatroom_ft .tool .file label{
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	cursor: pointer;
+	background-color: rgba(255,255,255);
+}
+.chatroom_ft .content .text{
+	width: 100%;
+	height: 100px;
+	border: none;
+	outline: none;
+	line-height: 18px;
+	resize: none;
+	background-color: #eee;
+}
+.chatroom_ft .action{
+	width: 220px;
+	height: 25px;
+	line-height: 25px;
+	align-self: flex-end;
+	outline: none;
+	cursor: pointer;
+}
+.action .desc{
+	font-size: 12px;
+	color: rgb(44,40,40);
+}
+.action .sendBtn{
+	margin-left: 10px;
+	color: #000000;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	width: 80px;
+	height: 25px;
+	border-radius: 5px;
+	background-color: #fff;
+	text-decoration: none;
+	border: 1px solid #e4e5e6;
+}
+
+
+.my.message .bubble{
+	background-color: #b2e281;
+	float:right;
+}
+.my{
+	margin-bottom: 16px;
+	float: right;
+	width: 100%;
+	padding-right: 20px;
+	box-sizing: border-box;
+}
+.other{
+	margin-bottom: 16px;
+	float: left;
+	width: 100%;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+
+.other.message .avatar{
+	width: 40px;
+	height: 40px;
+	border-radius: 2px;
+	float: left;
+	cursor: pointer;
+}
+.other.message .bubble::before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: -5px;
+	height: 10px;
+	width: 10px;
+	transform: rotate(45deg) translateY(-50%);
+	background-color: #fff;
+}
+.my.message .avatar{
+	float: right;
+}
+.message .content .nickname{
+    font-weight: 400;
+    padding-left: 10px;
+    font-size: 12px;
+    height: 22px;
+    line-height: 24px;
+    color: #4f4f4f;
+    width: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.message .bubble{
+    max-width: 500px;
+    min-height: 1em;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    text-align: left;
+    font-size: 14px;
+    border-radius: 3px;
+    margin: 0 10px;
+    background-color: #fff;
+}
+
+.my.message .bubble::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    height: 10px;
+    width: 10px;
+    transform: rotate(-45deg) translateY(-50%);
+    background-color: #b2e281;
+}
+.bubble_count{
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 25px;
+    padding:9px 13px;
+}
+.bubble_count img{
+    max-width: 400px;
+    height: auto;
+}
+
+
+
+
