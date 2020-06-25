@@ -36,8 +36,19 @@ io.on('connection',(socket)=>{
 	})
 	
 	socket.on('disconnect',()=>{
-		let idx=users.findIndex(item=>{item.username==socket.username});
+		console.log(socket.username);
+		console.log(users);
+		let idx;
+		users.forEach((item,index)=>{
+			if(item.username===socket.username){
+				idx=index;
+				return;
+			}
+		});
+		// let idx=users.findIndex(item=>{item.username===socket.username});
+		console.log(idx);
 		users.splice(idx,1);
+		console.log(users);
 		io.emit('deleteUser',{
 			username:socket.username
 		});

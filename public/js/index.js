@@ -147,13 +147,14 @@ $('#file').on('change',function(){
 	var file=this.files[0];
 	var fr=new FileReader();
 	fr.readAsDataURL(file);
-	fr.onload=function(){
+	fr.load=function(){
 		socket.emit('sendImage',{
 			username:username,
 			avatar:avatar,
 			img:fr.result
 		})
 	}
+	
 })
 
 socket.on('receiveImage',data=>{
@@ -197,21 +198,28 @@ socket.on('receiveImage',data=>{
 })
 
 //表情
-// $('.face').on('click',function(){
-// 	$('#content').emoji({
-// 		button:'.face',
-// 		showTab:false,
-// 		animation:'slide',
-// 		position:'topLeft',
-// 		icons:[
-// 			{
-// 				name:'QQ表情',
-// 				path:'lib/jquery-emoji/img/qq/',
-// 				maxNum:91,
-// 				excludeNums:[41,45,54],
-// 				file:'gif'
+$('.face').on('click',function(){
+	$('#content').emoji({
+		button:'.face',
+		showTab:false,
+		animation:'slide',
+		position:'topRight',
+		icons:[
+			{
+				name:'QQ表情',
+				path:'lib/dist/img/qq/',
+				maxNum:91,
+				excludeNums:[41,45,54],
+				file:'.gif'
 				
-// 			}
-// 		]
-// 	})
-// })
+			},
+			{
+				name:'myEmoji',
+				path:'lib/dist/img/myEmoji/',
+				maxNum:12,
+				file:'.jpg'
+				
+			}
+		]
+	})
+})
