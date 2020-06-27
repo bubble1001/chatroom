@@ -13,10 +13,11 @@ $('#loginBtn').on('click',function(){
 		return;
 	}
 	var avatar=$('#login_avatar li.current img').attr('src');
-	
+	var times=new Date().toLocaleTimeString()+new Date().toLocaleDateString();
 	socket.emit('login',{
 		username:username,
-		avatar:avatar
+		avatar:avatar,
+		times:times
 	})
 })
 
@@ -63,7 +64,7 @@ socket.on('userList',data=>{
 			<li class="user">
 				<div class="avatar"><img src=${item.avatar} ></div>
 				<div class="name">
-					<h3 class="username">${item.username}</h3>
+					<h3 class="username">${item.name}</h3>
 				</div>
 			</li>
 		`)
@@ -85,13 +86,15 @@ $('#sendBtn').on('click',()=>{
 function send(){
 	var content=$('#content').html().trim();
 	$('#content').html('');
+	var times=new Date().toLocaleTimeString()+new Date().toLocaleDateString();
 	if(!content){
 		return alert('请输入内容');
 	}
 	socket.emit('sendMessage',{
 		msg:content,
 		username:username,
-		avatar:avatar
+		avatar:avatar,
+		times:times
 	})
 }
 
@@ -195,6 +198,54 @@ socket.on('receiveImage',data=>{
 		scrollIntoView();
 	})
 	
+})
+
+
+//历史记录
+$('.history_message').on('click',function(){
+	socket.emit('select_message',{
+		username:username,
+		select:'select user,avatar,msg,date from user_msg'
+	})
+	socket.on('show_message',data=>{
+		$('.chatroom_bd').html('');
+		for(let i=0;i<data.length;i++){
+			if(data[i].user===username){
+				$('.chatroom_bd').append(`
+					<div class="message_box">
+						<div class="my message">
+							<img src="${data[i].avatar}" class="avatar">
+							<div class="content">
+								<div class="bubble">
+									<div class="bubble_count">
+										${data[i].msg}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				`);
+				
+			}else{
+				$('.chatroom_bd').append(`
+					<div class="message_box">
+						<div class="other message">
+							<img src="${data[i].avatar}" class="avatar" >
+							<div class="content">
+								<div class="nickname">${data[i].user}</div>
+								<div class="bubble">
+									<div class="bubble_count">
+										${data[i].msg}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				`)
+			}
+			scrollIntoView();
+		}
+	})
 })
 
 //表情
